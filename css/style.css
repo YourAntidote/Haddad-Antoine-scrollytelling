@@ -1,0 +1,197 @@
+:root {
+    --white: #fff;
+    --dark: #000;
+    --red: #98272D;
+    --blancChaud: #DDAF64;
+    --yellow: #ECEFA9;
+    --turquoise: #1E6672;
+    --lime: #63B67F;
+    --orange: #D45125;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    background-image: url("/img/img_arriere_plan/ciel.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+  
+.container {
+    height: 100%;
+    width: 100%;
+    text-align: center;    
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+  
+h1 {
+    font-family: 'Shantell Sans', cursive;
+    font-weight: bold;
+    font-size:calc(10px + 10vw);
+    color: #fff;
+
+}
+
+p {
+    font-family: 'Sriracha', cursive;
+    font-size: 3vw;
+    line-height: 1.5;
+}
+
+.projet{ 
+    font-family: 'Sriracha', cursive;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.scroll-down-arrow {
+    position: absolute;
+
+    border-radius: 20px;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+.scroll-down-arrow span {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-right: 7px solid blue;
+    border-bottom: 7px solid blue;
+    transform: rotate(45deg);
+}
+
+#chapitre1{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/img_personnages/homme_qui_tombe.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#chapitre2{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/img_arriere_plan/chemin_pierre.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#chapitre3{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/img_arriere_plan/paysage_chateau.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#chapitre4{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/img_arriere_plan/paysage_paradis.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#chapitre5{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/img_personnages/ixy_avec_tresor.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#chapitre6{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/img_arriere_plan/ciel.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+  
+
+
+/*------------------HTML2--------------------*/
+
+.html {
+    height: 5000px;
+    width: 100%;
+}
+
+.sprite-animation{
+    left: 50vw;
+    transform: translateX(-50%);
+    top: 30vw;
+    width: 503.5px;
+    height: 502px;
+    background-size: cover;
+    background-image: url(../img/img_personnages/spritesheet-fantome-foret2.png);
+    background-repeat: repeat-x;
+    z-index: 1;
+    animation: sprite-animation 2s steps(32) infinite;
+    position: absolute;
+    animation-play-state: paused;
+}
+
+
+
+@keyframes sprite-animation {
+    from { background-position: 0 0; }
+    to { background-position: 16112px 0; }
+}
+
+.body.is-scrolling .sprite-animation{
+    animation-play-state: running;
+}
+
+.body.is-scrolling .sprite{
+    animation-play-state: running;
+}
+
+.sprite {
+    left: 50vw;
+    transform: translateX(-50%);
+    top: 100vw;
+    width: 411.45px;
+    height: 422px;
+    background-size: cover;
+    background-image: url(../img/img_personnages/spritesheet-fantome-ciel.png);
+    background-repeat: repeat-x;
+    z-index: 1;
+    animation: sprite 2s steps(39) infinite;
+    position: relative;
+    animation-play-state: paused;
+}
+
+@keyframes sprite {
+    from { background-position: 0 0; }
+    to { background-position: 16458px 0; }
+}
