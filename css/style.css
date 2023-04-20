@@ -86,18 +86,19 @@ p {
 #chapitre1{
     width: 100vw;
     height: 100vh;
-    background-image: url("../img/img_personnages/homme_qui_tombe.svg");
+    background-image: url("../img/img_personnages/homme_falaise.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    background-color: var(--blancChaud);
 }
 
 #chapitre2{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-image: url("../img/img_arriere_plan/chemin_pierre.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
 }
 
