@@ -82,30 +82,63 @@ p {
     border-bottom: 7px solid blue;
     transform: rotate(45deg);
 }
-
+/*-----------CHAPITRE 1-------------------------*/
 #chapitre1{
     width: 100vw;
     height: 100vh;
-    background-image: url("../img/img_personnages/homme_falaise.svg");
+    background-image: url("../img/img_arriere_plan/falaise3.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-color: var(--blancChaud);
+
+
 }
+
+.chapt1{
+    position: absolute;
+    z-index: 10;
+}
+#petite-roche {
+    width: 5%;
+    height: 5%;
+}
+
+#homme-falaise{
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50vh;
+    width: auto;
+}
+
+#ixy-mort{
+    left: 50%;
+    transform: translateX(-50%);
+    height: 20vh;
+    width: auto;
+}
+
+
+
+
+
+
+
+
+
 
 #chapitre2{
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     background-image: url("../img/img_arriere_plan/chemin_pierre.svg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
 }
 
 #chapitre3{
     width: 100vw;
     height: 100vh;
-    background-image: url("../img/img_arriere_plan/paysage_chateau.svg");
+    background-image: url("../img/img_arriere_plan/forest.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -114,7 +147,7 @@ p {
 #chapitre4{
     width: 100vw;
     height: 100vh;
-    background-image: url("../img/img_arriere_plan/paysage_paradis.svg");
+    background-image: url("../img/img_arriere_plan/paysage_chateau.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -130,6 +163,15 @@ p {
 }
 
 #chapitre6{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/img_arriere_plan/paysage_paradis.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#chapitre7{
     width: 100vw;
     height: 100vh;
     background-image: url("../img/img_arriere_plan/ciel.svg");

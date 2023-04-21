@@ -43,17 +43,33 @@ const body = document.querySelector('.body');
 
 let scrollTimer;
 
-// Ajouter un écouteur d'évènement scroll sur la fenêtre
+
 window.addEventListener('scroll', function() {
-  // Ajouter la classe .is-scrolling à la balise body
+
   body.classList.add('is-scrolling');
-  
-  // Annuler le minuteur existant (s'il y en a un) pour en créer un nouveau
   clearTimeout(scrollTimer);
-  
-  // Stocker un minuteur de 100ms
   scrollTimer = setTimeout(function() {
-    // Enlever la classe .is-scrolling de la balise body
     body.classList.remove('is-scrolling');
   }, 100);
 });
+
+/*
+ScrollTrigger.create({
+  trigger: ".wrapper",
+  start: "top 20%", 
+  end: "bottom 8%",
+  pin: '#chapitre1',
+  markers: true
+});
+
+gsap.to('.ixy-mort', { 
+  scrollTrigger: {
+    pin: '#chapiter1',
+    scrub: true,
+    markers: true,
+    start: 'top 10%',
+    end: 'bottom 0%',
+    trigger: '.ixy-mort',
+  },
+})
+*/
