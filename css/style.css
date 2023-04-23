@@ -55,8 +55,9 @@ h1 {
 
 p {
     font-family: 'Sriracha', cursive;
-    font-size: 3vw;
-    line-height: 1.5;
+    font-size:calc(10px + 1vw);
+    margin: 0;
+    
 }
 
 .projet{ 
@@ -89,8 +90,8 @@ p {
     background-image: url("../img/img_arriere_plan/falaise3.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
-
+    background-position: left center;
+    
 
 }
 
@@ -98,22 +99,23 @@ p {
     position: absolute;
     z-index: 10;
 }
-#petite-roche {
+.petite-roche {
     width: 5%;
     height: 5%;
+    min-width: 50px;
 }
 
 #homme-falaise{
     left: 50%;
     transform: translateX(-50%);
-    height: 50vh;
+    max-height: 500px;
     width: auto;
 }
 
 #ixy-mort{
     left: 50%;
     transform: translateX(-50%);
-    height: 20vh;
+    max-height: 250px;
     width: auto;
 }
 
@@ -129,16 +131,33 @@ p {
 #chapitre2{
     width: 100vw;
     height: 100vh;
-    background-image: url("../img/img_arriere_plan/chemin_pierre.svg");
+    background-image: url("../img/img_arriere_plan/forest.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
+.chapt2 {
+    position: absolute;
+    z-index: 11;
+
+}
+#ixy-feuille{
+    left: 50%;
+    
+
+    transform: translateX(-50%);
+    width: auto;
+
+}
+
+
+
+
 
 #chapitre3{
     width: 100vw;
     height: 100vh;
-    background-image: url("../img/img_arriere_plan/forest.svg");
+    background-image: url("../img/img_arriere_plan/chemin_pierre.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
