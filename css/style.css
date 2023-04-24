@@ -51,6 +51,7 @@ h1 {
     font-size:calc(10px + 10vw);
     color: var(--turquoise);
 
+
 }
 
 p {
@@ -95,7 +96,7 @@ a{
     border-bottom: 7px solid var(--turquoise);
     transform: rotate(45deg);
 }
-/*-----------CHAPITRE 1-------------------------*/
+/*-------------------CHAPITRE 1------------------*/
 #chapitre1{
     width: 100vw;
     height: 100vh;
@@ -122,20 +123,60 @@ a{
     transform: translateX(-50%);
     max-height: 500px;
     width: auto;
+    animation: animation-homme 2s ;
+    position: absolute;
+    animation-play-state: paused;
 }
 
 #ixy-mort{
     left: 50%;
     transform: translateX(-50%);
-    max-height: 250px;
+    max-height: 200px;
     width: auto;
+    animation: animation-ciel 2s ;
+
+    position: absolute;
+    animation-play-state: paused;
 }
 
+.petite-roche.no1{
+    left: 60%;
+    scale: 0.5;
+}
 
+.petite-roche.no2{
+    left: 40%;
+    scale: 0.7;
+}
 
+.petite-roche.no3{
+    left: 30%;
+    scale: 0.4;
+}
 
+.petite-roche.no4{
+    left: 69%;
+    scale: 0.9;
+}
 
+@keyframes animation-ciel{
+    from { top : 200vmin; opacity: 0;}
+    to { top: 100vmin; opacity: 1;}
+}
 
+@keyframes animation-homme{
+    from { top : 10vmin}
+    to { top: 150vmin}
+}
+
+.body.is-scrolling #ixy-mort{
+    animation-play-state: running;
+}
+.body.is-scrolling #homme-falaise{
+    animation-play-state: running;
+}
+
+/*-------------------CHAPITRE 2------------------*/
 
 
 
@@ -154,7 +195,7 @@ a{
     z-index: 11;
 
 }
-#ixy-feuille{
+/*#ixy-feuille{
     left: 50%;
     transform-origin: bottom;
     top: 2550px;
@@ -162,12 +203,50 @@ a{
     max-height: 250px;
     width: auto;
 }
-.feuille {
+*/
+.feuille.no0 {
     position: relative;
     width: 5vw;
     left: 50%;
     top: 0px;
+    animation: anim-feuille 2s infinite;
+
+    animation-play-state: paused;
 }
+
+.sprite-animation{
+    left: -50px;
+    transform: translateX(-50%);
+    top: 2400px;
+    scale: 0.5;
+    width: 503.5px;
+    height: 502px;
+    background-size: cover;
+    background-image: url(../img/img_personnages/spritesheet-fantome-foret2.png);
+    background-repeat: repeat-x;
+    z-index: 1;
+    animation: sprite-animation 2s steps(32) infinite;
+    position: absolute;
+    animation-play-state: paused;
+}
+
+@keyframes anim-feuille {
+    to {top: 90%}
+}
+
+@keyframes sprite-animation {
+    from { background-position: 0 0; left : 0; }
+    to { background-position: 16112px 0; left : 40%;}
+}
+
+.body.is-scrolling .sprite-animation{
+    animation-play-state: running;
+}
+
+.body.is-scrolling .feuille{
+    animation-play-state: running;
+}
+
 
 
 /*-------------------CHAPITRE 3------------------*/
@@ -215,7 +294,7 @@ a{
 }
 
 
-
+/*-------------------CHAPITRE 5------------------*/
 
 
 #chapitre5{
@@ -226,6 +305,8 @@ a{
     background-size: cover;
     background-position: center center;
 }
+ 
+/*-------------------CHAPITRE 6------------------*/
 
 #chapitre6{
     width: 100vw;
@@ -235,6 +316,39 @@ a{
     background-size: cover;
     background-position: center center;
 }
+
+.chapt6.feuille {
+    position: relative;
+    width: 5%;
+    height: 5%;
+    min-width: 50px;
+}
+
+.feuille.no1{
+    left: 10%;
+    scale: 0.5;
+}
+
+.feuille.no2{
+    left: 40%;
+    scale: 0.7;
+}
+
+.feuille.no3{
+    left: 30%;
+    scale: 0.4;
+}
+
+.feuille.no4{
+    left: 75%;
+    scale: 0.9;
+}
+
+.feuille.no5{
+    left: 9%;
+    scale: 0.3;
+}
+/*-------------------CHAPITRE 7------------------*/
 
 #chapitre7{
     width: 100vw;
@@ -250,9 +364,22 @@ a{
     transform: translateX(-50%);
     max-height: 250px;
     width: auto;
-    top: 0px;
+
     position: relative;
+    animation: fin 2s infinite;
+    animation-play-state: paused;
 }
+
+
+@keyframes fin {
+    from { top : 70vmin; opacity: 1;}
+    to { top: 0vmin; opacity: 0;}
+}
+
+.body.is-scrolling .ixy-mort2{
+    animation-play-state: running;
+}
+
 
 /*------------------HTML2--------------------*/
 
@@ -261,32 +388,7 @@ a{
     width: 100%;
 }
 
-.sprite-animation{
-    left: -50px;
-    transform: translateX(-50%);
-    top: 2400px;
-    scale: 0.5;
-    width: 503.5px;
-    height: 502px;
-    background-size: cover;
-    background-image: url(../img/img_personnages/spritesheet-fantome-foret2.png);
-    background-repeat: repeat-x;
-    z-index: 1;
-    animation: sprite-animation 2s steps(32) infinite;
-    position: absolute;
-    animation-play-state: paused;
-}
 
-
-
-@keyframes sprite-animation {
-    from { background-position: 0 0; }
-    to { background-position: 16112px 0; }
-}
-
-.body.is-scrolling .sprite-animation{
-    animation-play-state: running;
-}
 
 .body.is-scrolling .sprite{
     animation-play-state: running;

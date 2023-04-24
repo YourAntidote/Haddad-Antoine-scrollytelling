@@ -68,6 +68,29 @@ gsap.to('.ixy-mort', {
 
     start: 'top 10%',
     end: 'bottom 0%',
-
+    trigger: ".ixy-mort"
   },
 })
+
+
+
+/* ---------ROCHE TIMELINE ---------*/
+
+let anim = gsap.timeline()
+  .paused(false)
+    .to('.petite-roche.no1', { duration: 25, y: '52vmin', rotation: 400,  repeat: '-1',ease :'none' }, '<')
+    .to('.petite-roche.no2', { duration: 30, y: '70vmin', rotation: 360,  repeat: '-1', ease: 'none'}, '<')
+    .to('.petite-roche.no3', { duration: 20, y: '65vmin', rotation: 360,  repeat: '-1', ease: 'none'}, '<')
+    .to('.petite-roche.no4', { duration: 15,  y: '48vmin',rotation: 360, repeat: '-1', ease:'none' }, '<')
+
+
+
+let animFeuille = gsap.timeline()
+  .paused(false)
+    .to('.feuille.no1', { duration: 25, y: '52vmin', rotation: 400, repeat: '-1', ease: 'none'}, '<')
+    .to('.feuille.no2', { duration: 30, y: '70vmin', rotation: 360, repeat: '-1', ease: 'none'}, '<')
+    .to('.feuille.no3', { duration: 20, y: '65vmin', rotation: 360, repeat: '-1', ease: 'none'}, '<')
+    .to('.feuille.no4', { duration: 15, y: '48vmin', rotation: 360, repeat: '-1', ease: 'none'}, '<')
+    .to('.feuille.no5', { duration: 15, y: '48vmin', rotation: 360, repeat: '-1', ease: 'none'}, '<')
+
+    
