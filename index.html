@@ -14,12 +14,12 @@
     <link rel="icon" href="./img/img_personnages/ixy.svg">
     <title>La quête de Ixy</title>
 </head>
-<body>
+<body class="body">
     <header>
         <div class="container">
             <h1>La quête d'Ixy</h1>
-            <p class="projet">Projet créé dans le cadre du cours Optimisation Web - Intégration multimédia - Collège Montmorency.
-                © 2023 - Conception : Antoine Haddad, Camélie Laprise et Ghita Alaoui | Développement Web : Marie-Michelle Ouellet.</p>
+            <a class="projet">Projet créé dans le cadre du cours Optimisation Web - Intégration multimédia - Collège Montmorency.
+                © 2023 - Conception : Antoine Haddad, Camélie Laprise et Ghita Alaoui | Développement Web : Marie-Michelle Ouellet.</a>
         </div>
         <div class="scroll-down-arrow">
                 <span></span>
@@ -32,21 +32,50 @@
             <img src="./img/img_elements_visuels/roche.svg" class="chapt1 petite-roche no1">
             <img src="./img/img_elements_visuels/roche.svg" class="chapt1 petite-roche no2">
             <img src="./img/img_personnages/ixy_devant_porte_paradis.svg" id="ixy-mort"  class="chapt1">
-            <p>Un jeune homme parti dans la forest à l'aventure du trésor caché, mais tomba maladroitement de la falaise. Durant sa chute, son âme sorti de son corps afin de devenir un fantôme. Ainsi, commença l'aventure de Ixy. </p>
+            <p>Un jeune homme parti dans la forêt à l'aventure du trésor caché, mais tomba maladroitement de la falaise. Durant sa chute, son âme sorti de son corps afin de devenir un fantôme. Ainsi, commença l'aventure de Ixy. </p>
         </section>
             
         <section id="chapitre2">
-            <img src="./img/img_personnages/ixy_voit_feuille.svg" id="ixy-feuille" class=" chapt2">
+
+                <div class="sprite-animation"></div>
+
+            <!--<img src="./img/img_personnages/ixy_voit_feuille.svg" id="ixy-feuille" class=" chapt2">-->
             <img src="./img/img_elements_visuels/feuille_vole.svg" class="feuille chapt2">
-            <p>Alors qu'Ixy rebroussait chemin, il vit une feuille une par terre avec un étrange motif dessus</p>
-            <p>C'est une carte au trésor!</p>
+            <p>Alors qu'Ixy rebroussait chemin, il vit une feuille une par terre avec un étrange motif dessus. C'est une carte au trésor!</p>
+
         </section>
 
-        <section id="chapitre3">    </section>
-        <section id="chapitre4">    </section>
-        <section id="chapitre5">    </section>
-        <section id="chapitre6">    </section>
-        <section id="chapitre7">    </section>
+        <section id="chapitre3">    
+            <img src="./img/img_personnages/ixy_proche_roche.svg" class="ixy-roche chapt3">
+            <p>Après un long trajet à travers la forête, Ixy arrive sur le lieu inscrit sur la feuille. À première vu, rien n'avait l'air pertinent, jusqu'à ce qu'il voit un autre chemin qui était gravé sur la grande roche.</p>
+        </section>
+
+
+        <section id="chapitre4">   
+            <p>On dirait que ce chemin le mène cette fois-ci vers le château abandonné.</p>
+            <div>
+                <div class="sprite no1"></div>
+            </div>
+        </section>
+
+
+        <section id="chapitre5">
+            <p class="text-tresor">Ça y est! Ixy a trouvé a résolu sa première chasse au trésor. Des bijoux, des vieilles pièces d'or et pleines d'autres babioles dorées ont émerveiller les yeux d'Ixy.</p>
+        </section>
+
+
+        <section id="chapitre6">
+            <div>
+                <div class="sprite no2"></div>
+            </div>
+            
+        </section>
+
+
+
+        <section id="chapitre7">
+            <img src="./img/img_personnages/ixy_devant_porte_paradis.svg"  class="ixy-mort2 chapt7">
+        </section>
     </main>
 
 
@@ -56,6 +85,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-  <script src="/script/script.js"></script>
+  <script src="./script/script.js"></script>
 </body>
 </html>

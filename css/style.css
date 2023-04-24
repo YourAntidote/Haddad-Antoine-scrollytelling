@@ -49,7 +49,7 @@ h1 {
     font-family: 'Shantell Sans', cursive;
     font-weight: bold;
     font-size:calc(10px + 10vw);
-    color: #fff;
+    color: var(--turquoise);
 
 }
 
@@ -57,9 +57,21 @@ p {
     font-family: 'Sriracha', cursive;
     font-size:calc(10px + 1vw);
     margin: 0;
-    
+    width: 30vw;
+    text-align: center;
+    margin-top: 20px;   
+    right: 1%;
+    position: absolute;
+    background-color: var(--red);
+    padding: 20px;
+    border-radius: 20px;
+    color: var(--white);
 }
-
+a{
+    font-family: 'Sriracha', cursive;
+    font-size:calc(10px + 1vw);
+    margin: 0;
+}
 .projet{ 
     font-family: 'Sriracha', cursive;
     font-size: 15px;
@@ -79,8 +91,8 @@ p {
     display: block;
     width: 48px;
     height: 48px;
-    border-right: 7px solid blue;
-    border-bottom: 7px solid blue;
+    border-right: 7px solid var(--turquoise);
+    border-bottom: 7px solid var(--turquoise);
     transform: rotate(45deg);
 }
 /*-----------CHAPITRE 1-------------------------*/
@@ -135,6 +147,7 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    box-sizing: border-box;
 }
 .chapt2 {
     position: absolute;
@@ -143,16 +156,21 @@ p {
 }
 #ixy-feuille{
     left: 50%;
-    
-
+    transform-origin: bottom;
+    top: 2550px;
     transform: translateX(-50%);
+    max-height: 250px;
     width: auto;
-
+}
+.feuille {
+    position: relative;
+    width: 5vw;
+    left: 50%;
+    top: 0px;
 }
 
 
-
-
+/*-------------------CHAPITRE 3------------------*/
 
 #chapitre3{
     width: 100vw;
@@ -163,6 +181,24 @@ p {
     background-position: center center;
 }
 
+.ixy-roche{
+    left: 50%;
+
+    top: 3450px;
+    transform: translateX(-50%);
+    max-height: 250px;
+    width: auto;
+}
+
+.chapt3 {
+    position: absolute;
+    z-index: 11;
+
+}
+
+
+/*-------------------CHAPITRE 4------------------*/
+
 #chapitre4{
     width: 100vw;
     height: 100vh;
@@ -171,6 +207,16 @@ p {
     background-size: cover;
     background-position: center center;
 }
+
+.chapt4 {
+    position: absolute;
+    z-index: 11;
+
+}
+
+
+
+
 
 #chapitre5{
     width: 100vw;
@@ -199,7 +245,14 @@ p {
     background-position: center center;
 }
   
-
+.ixy-mort2{
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 250px;
+    width: auto;
+    top: 0px;
+    position: relative;
+}
 
 /*------------------HTML2--------------------*/
 
@@ -209,9 +262,10 @@ p {
 }
 
 .sprite-animation{
-    left: 50vw;
+    left: -50px;
     transform: translateX(-50%);
-    top: 30vw;
+    top: 2400px;
+    scale: 0.5;
     width: 503.5px;
     height: 502px;
     background-size: cover;
@@ -238,10 +292,10 @@ p {
     animation-play-state: running;
 }
 
-.sprite {
+.sprite.no1 {
     left: 50vw;
     transform: translateX(-50%);
-    top: 100vw;
+    top: 2400px;
     width: 411.45px;
     height: 422px;
     background-size: cover;
@@ -255,5 +309,35 @@ p {
 
 @keyframes sprite {
     from { background-position: 0 0; }
-    to { background-position: 16458px 0; }
+    to { background-position: -16458px 0; }
+}
+
+.sprite.no2 {
+    left: 50vw;
+    transform: translateX(-50%);
+    top: 4300px;
+    width: 411.45px;
+    height: 422px;
+    background-size: cover;
+    background-image: url(../img/img_personnages/spritesheet-fantome-ciel.png);
+    background-repeat: repeat-x;
+    z-index: 1;
+    animation: sprite 2s steps(39) infinite;
+    position: absolute;
+    animation-play-state: paused;
+}
+
+.sprite.no3 {
+    left: 50vw;
+    transform: translateX(-50%);
+    top: 6800px;
+    width: 411.45px;
+    height: 422px;
+    background-size: cover;
+    background-image: url(../img/img_personnages/spritesheet-fantome-ciel.png);
+    background-repeat: repeat-x;
+    z-index: 1;
+    animation: sprite 2s steps(39) infinite;
+    position: absolute;
+    animation-play-state: paused;
 }

@@ -53,23 +53,21 @@ window.addEventListener('scroll', function() {
   }, 100);
 });
 
-/*
+
 ScrollTrigger.create({
   trigger: ".wrapper",
   start: "top 20%", 
   end: "bottom 8%",
-  pin: '#chapitre1',
-  markers: true
+
 });
 
 gsap.to('.ixy-mort', { 
   scrollTrigger: {
-    pin: '#chapiter1',
+ 
     scrub: true,
-    markers: true,
+
     start: 'top 10%',
     end: 'bottom 0%',
-    trigger: '.ixy-mort',
+
   },
 })
-*/
