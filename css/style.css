@@ -34,7 +34,13 @@ header {
     flex-wrap: wrap;
 }
 
-  
+.chapter {
+    border: yellow 1px solid;
+}  
+.animable {
+    border: var(--orange) 2px solid;
+}
+
 .container {
     height: 100%;
     width: 100%;
@@ -120,12 +126,10 @@ a{
 
 #homme-falaise{
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) ;
     max-height: 500px;
     width: auto;
-    animation: animation-homme 2s ;
     position: absolute;
-    animation-play-state: paused;
 }
 
 #ixy-mort{
@@ -159,22 +163,8 @@ a{
     scale: 0.9;
 }
 
-@keyframes animation-ciel{
-    from { top : 200vmin; opacity: 0;}
-    to { top: 100vmin; opacity: 1;}
-}
 
-@keyframes animation-homme{
-    from { top : 10vmin}
-    to { top: 150vmin}
-}
 
-.body.is-scrolling #ixy-mort{
-    animation-play-state: running;
-}
-.body.is-scrolling #homme-falaise{
-    animation-play-state: running;
-}
 
 /*-------------------CHAPITRE 2------------------*/
 
@@ -208,7 +198,7 @@ a{
     position: relative;
     width: 5vw;
     left: 50%;
-    top: 0px;
+
     animation: anim-feuille 2s infinite;
 
     animation-play-state: paused;
@@ -217,7 +207,6 @@ a{
 .sprite-animation{
     left: -50px;
     transform: translateX(-50%);
-    top: 2400px;
     scale: 0.5;
     width: 503.5px;
     height: 502px;
@@ -262,8 +251,6 @@ a{
 
 .ixy-roche{
     left: 50%;
-
-    top: 3450px;
     transform: translateX(-50%);
     max-height: 250px;
     width: auto;
@@ -397,7 +384,6 @@ a{
 .sprite.no1 {
     left: 50vw;
     transform: translateX(-50%);
-    top: 2400px;
     width: 411.45px;
     height: 422px;
     background-size: cover;
@@ -417,7 +403,6 @@ a{
 .sprite.no2 {
     left: 50vw;
     transform: translateX(-50%);
-    top: 4300px;
     width: 411.45px;
     height: 422px;
     background-size: cover;
@@ -432,7 +417,7 @@ a{
 .sprite.no3 {
     left: 50vw;
     transform: translateX(-50%);
-    top: 6800px;
+
     width: 411.45px;
     height: 422px;
     background-size: cover;
