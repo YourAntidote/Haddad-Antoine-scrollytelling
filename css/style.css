@@ -137,10 +137,7 @@ a{
     transform: translateX(-50%);
     max-height: 200px;
     width: auto;
-    animation: animation-ciel 2s ;
-
     position: absolute;
-    animation-play-state: paused;
 }
 
 .petite-roche.no1{
@@ -165,7 +162,6 @@ a{
 
 
 
-
 /*-------------------CHAPITRE 2------------------*/
 
 
@@ -177,7 +173,7 @@ a{
     background-image: url("../img/img_arriere_plan/forest.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center bottom;
     box-sizing: border-box;
 }
 .chapt2 {
@@ -198,15 +194,27 @@ a{
     position: relative;
     width: 5vw;
     left: 50%;
-
-    animation: anim-feuille 2s infinite;
-
-    animation-play-state: paused;
+    min-width: 70px;
+    z-index: 0;
+}
+.carte {
+    position: absolute;
+    z-index: 3;
+    max-width: 50vw;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+.ixy-marche {
+    left: 50%;
+    transform: translateX(-50%); 
+    position: absolute;
+    bottom: 0px;
+}
+.body.is-scrolling .feuille{
+    animation-play-state: running;
 }
 
 .sprite-animation{
-    left: -50px;
-    transform: translateX(-50%);
     scale: 0.5;
     width: 503.5px;
     height: 502px;
@@ -215,17 +223,15 @@ a{
     background-repeat: repeat-x;
     z-index: 1;
     animation: sprite-animation 2s steps(32) infinite;
-    position: absolute;
+
     animation-play-state: paused;
+
 }
 
-@keyframes anim-feuille {
-    to {top: 90%}
-}
 
 @keyframes sprite-animation {
-    from { background-position: 0 0; left : 0; }
-    to { background-position: 16112px 0; left : 40%;}
+    from { background-position: 0 0; }
+    to { background-position: 16112px 0;}
 }
 
 .body.is-scrolling .sprite-animation{
@@ -278,6 +284,42 @@ a{
     position: absolute;
     z-index: 11;
 
+}
+.body.is-scrolling .sprite{
+    animation-play-state: running;
+}
+
+.sprite.no1 {
+    left: 50vw;
+    transform: translateX(-50%);
+    width: 411.45px;
+    height: 422px;
+    background-size: cover;
+    background-image: url(../img/img_personnages/spritesheet-fantome-ciel.png);
+    background-repeat: repeat-x;
+    z-index: 1;
+    animation: sprite 2s steps(39) infinite;
+    position: relative;
+    animation-play-state: paused;
+}
+
+@keyframes sprite {
+    from { background-position: 0 0; }
+    to { background-position: -16458px 0; }
+}
+
+.sprite.no2 {
+    left: 50vw;
+    transform: translateX(-50%);
+    width: 411.45px;
+    height: 422px;
+    background-size: cover;
+    background-image: url(../img/img_personnages/spritesheet-fantome-ciel.png);
+    background-repeat: repeat-x;
+    z-index: 1;
+    animation: sprite 2s steps(39) infinite;
+    position: absolute;
+    animation-play-state: paused;
 }
 
 
@@ -377,42 +419,6 @@ a{
 
 
 
-.body.is-scrolling .sprite{
-    animation-play-state: running;
-}
-
-.sprite.no1 {
-    left: 50vw;
-    transform: translateX(-50%);
-    width: 411.45px;
-    height: 422px;
-    background-size: cover;
-    background-image: url(../img/img_personnages/spritesheet-fantome-ciel.png);
-    background-repeat: repeat-x;
-    z-index: 1;
-    animation: sprite 2s steps(39) infinite;
-    position: relative;
-    animation-play-state: paused;
-}
-
-@keyframes sprite {
-    from { background-position: 0 0; }
-    to { background-position: -16458px 0; }
-}
-
-.sprite.no2 {
-    left: 50vw;
-    transform: translateX(-50%);
-    width: 411.45px;
-    height: 422px;
-    background-size: cover;
-    background-image: url(../img/img_personnages/spritesheet-fantome-ciel.png);
-    background-repeat: repeat-x;
-    z-index: 1;
-    animation: sprite 2s steps(39) infinite;
-    position: absolute;
-    animation-play-state: paused;
-}
 
 .sprite.no3 {
     left: 50vw;

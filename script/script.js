@@ -50,30 +50,13 @@ window.addEventListener('scroll', function() {
   clearTimeout(scrollTimer);
   scrollTimer = setTimeout(function() {
     body.classList.remove('is-scrolling');
-  }, 100);
+  }, 200);
 });
 
 
+/* --------------------------------------Animation Chapitre 1 --------------------------------------------*/
 
 
-
-
-
-/* ---------Animation Chapitre 1 ---------*/
-/*
-gsap.to(
-  ".animable",
-  {
-    scrollTrigger: {
-      trigger: "#chapitre1",
-      start: "50% 50%", 
-      pin: true,
-      scrub: true,
-
-    }
-  }
-);
-*/
 gsap.timeline({ scrollTrigger: {
     pin:true,
     markers: true,
@@ -86,6 +69,10 @@ gsap.timeline({ scrollTrigger: {
 .to('#homme-falaise', {
   y: '50vh',
   duration: 1,
+})
+.from('#ixy-mort', {
+  y: '100vh',
+  duration: 1,
 });
 
 gsap.timeline({ scrollTrigger: {
@@ -97,22 +84,84 @@ gsap.timeline({ scrollTrigger: {
   trigger: '#chapitre1',
   toggleActions: "play reverse reverse play"
 }})
-.from('#ixy-mort', {
-y: '100vh',
-duration: 1,
+.to('.petite-roche', {
+  y: '100vh',
+  duration: 1,
 });
 
 
 
 let anim = gsap.timeline()
   .paused(false)
-    .to('.petite-roche.no1', { duration: 25, y: '52vmin', rotation: 400, repeat: '-1', ease :'none'}, '<')
-    .to('.petite-roche.no2', { duration: 30, y: '70vmin', rotation: 360, repeat: '-1', ease: 'none'}, '<')
-    .to('.petite-roche.no3', { duration: 20, y: '65vmin', rotation: 360, repeat: '-1', ease: 'none'}, '<')
-    .to('.petite-roche.no4', { duration: 15, y: '48vmin', rotation: 360, repeat: '-1', ease:'none' }, '<')
+    .to('.petite-roche.no1', { duration: 25, rotation: 400, repeat: '-1', ease: 'none'}, '<')
+    .to('.petite-roche.no2', { duration: 30, rotation: 360, repeat: '-1', ease: 'none'}, '<')
+    .to('.petite-roche.no3', { duration: 20, rotation: 360, repeat: '-1', ease: 'none'}, '<')
+    .to('.petite-roche.no4', { duration: 15, rotation: 360, repeat: '-1', ease: 'none'}, '<')
 
 
-/* ---------Animation Chapitre 6 ---------*/
+/* --------------------------------------Animation Chapitre 2 --------------------------------------------*/
+
+gsap.timeline({ scrollTrigger: {
+  pin:true,
+  markers: true,
+  scrub: true,
+  start: 'top top',
+  end:"400% top" ,
+  trigger: '#chapitre2',
+  toggleActions: "play reverse reverse play"
+  }
+})
+.from('.sprite-animation', {
+  x: '-100vw',
+});
+
+gsap.timeline({ scrollTrigger: {
+  pin:true,
+  markers: true,
+  scrub: true,
+  start: 'top top',
+  end:"400% top" ,
+  trigger: '#chapitre2',
+  toggleActions: "play reverse reverse play"
+  }
+})
+.to('.feuille.no0', {
+y: '90vmin',
+duration: 1,
+rotation: 360
+})
+.from('.carte', {
+y: '200vh',
+duration: 1,
+})
+
+/* --------------------------------------Animation Chapitre 3 --------------------------------------------*/
+
+/* --------------------------------------Animation Chapitre 4 --------------------------------------------*/
+
+gsap.timeline({ scrollTrigger: {
+    pin:true,
+    markers: true,
+    scrub: true,
+    start: 'top top',
+    end:"500% top" ,
+    trigger: '#chapitre1',
+    toggleActions: "play reverse reverse play"
+  }})
+.to('#homme-falaise', {
+  y: '50vh',
+  duration: 1,
+})
+.from('#ixy-mort', {
+y: '100vh',
+duration: 1,
+opacity: 0,
+});
+
+/* --------------------------------------Animation Chapitre 5 --------------------------------------------*/
+
+/* --------------------------------------Animation Chapitre 6 --------------------------------------------*/
+
 let animFeuille = gsap.timeline()
   .paused(false)
     .to('.feuille.no1', { duration: 25, y: '52vmin', rotation: 400, repeat: '-1', ease: 'none'}, '<')
@@ -139,3 +188,4 @@ let animFeuille = gsap.timeline()
 }
 );
 */
+/* --------------------------------------Animation Chapitre 7 --------------------------------------------*/
