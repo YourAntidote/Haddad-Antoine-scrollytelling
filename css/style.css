@@ -102,6 +102,10 @@ a{
     border-bottom: 7px solid var(--turquoise);
     transform: rotate(45deg);
 }
+
+.pin-spacer{
+    padding: none!important;
+}
 /*-------------------CHAPITRE 1------------------*/
 #chapitre1{
     width: 100vw;
@@ -110,6 +114,7 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left center;
+
     
 
 }
@@ -186,7 +191,8 @@ a{
     transform: translateX(-50%);
     max-height: 250px;
     width: 50vw;
-    bottom: 0px;
+    bottom: 10vmin;
+    opacity: 0;
 }
 
 .feuille.no0 {
@@ -196,15 +202,8 @@ a{
     min-width: 70px;
     z-index: 0;
 }
-.carte {
-    position: absolute;
-    z-index: 3;
-    max-width: 50vw;
-    left: 50%;
-    transform: translateX(-50%); 
-    opacity: 1;
-}
-.ixy-marche {
+
+.ixy-marche.no1 {
     left: 40%;
     transform: translateX(-50%); 
     position: absolute;
@@ -225,11 +224,8 @@ a{
     background-repeat: repeat-x;
     z-index: 1;
     animation: sprite-animation 2s steps(32) infinite;
-
     animation-play-state: paused;
-
 }
-
 
 @keyframes sprite-animation {
     from { background-position: 0 0; }
@@ -244,32 +240,33 @@ a{
     animation-play-state: running;
 }
 
-
-
 /*-------------------CHAPITRE 3------------------*/
-
 #chapitre3{
     width: 100vw;
     height: 100vh;
-    background-image: url("../img/img_arriere_plan/chemin_pierre.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background-color: var(--yellow);
+    box-sizing: border-box;
 }
-
-.ixy-roche{
-    left: 50%;
-    transform: translateX(-50%);
-    max-height: 250px;
-    width: auto;
-}
-
 .chapt3 {
     position: absolute;
-    z-index: 11;
-
 }
 
+.carte {
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 760px;
+    width: 90vw;
+    top: 16%;
+    opacity: 1;
+    position: relative;
+}
+
+.ixy{
+    width: 4vh;
+    height: 4vh;
+    z-index: 1;
+    position: relative;
+}
 
 /*-------------------CHAPITRE 4------------------*/
 
@@ -303,6 +300,7 @@ a{
     animation: sprite 2s steps(39) infinite;
     position: relative;
     animation-play-state: paused;
+    top: 60vmin;
 }
 
 @keyframes sprite {
@@ -310,19 +308,7 @@ a{
     to { background-position: -16458px 0; }
 }
 
-.sprite.no2 {
-    left: 50vw;
-    transform: translateX(-50%);
-    width: 411.45px;
-    height: 422px;
-    background-size: cover;
-    background-image: url("../img/img_personnages/spritesheet-fantome-ciel.png");
-    background-repeat: repeat-x;
-    z-index: 1;
-    animation: sprite 2s steps(39) infinite;
-    position: absolute;
-    animation-play-state: paused;
-}
+
 
 
 /*-------------------CHAPITRE 5------------------*/
@@ -346,6 +332,39 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+}
+
+.sprite.no2 {
+    left: 50vw;
+    transform: translateX(-50%);
+    width: 411.45px;
+    height: 422px;
+    background-size: cover;
+    background-image: url("../img/img_personnages/spritesheet-fantome-ciel.png");
+    background-repeat: repeat-x;
+    z-index: 1;
+    animation: sprite 2s steps(39) infinite;
+    position: absolute;
+    animation-play-state: paused;
+    top: 60vmin;
+}
+
+#vent {
+    position: absolute;
+    width: 80vw;
+    height: 80vh;
+    right: 5vw;
+    bottom: 0vw;
+}
+
+.visual.chapter2.no1 {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    right: 5vw;
+    object-position: 50% 60%;
 }
 
 .chapt6.feuille {
@@ -385,9 +404,10 @@ a{
     width: 100vw;
     height: 100vh;
     background-image: url("../img/img_arriere_plan/ciel.svg");
+    background-size: 200%;  /* ou 200% pour augmenter l'effet, si l'image originale est assez grande */
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background-attachment: scroll;
+    background-position: 0% 100%;
 }
   
 .ixy-mort2{
@@ -395,44 +415,55 @@ a{
     transform: translateX(-50%);
     max-height: 250px;
     width: auto;
-
+    
     position: relative;
     animation: fin 2s infinite;
     animation-play-state: paused;
 }
 
-
-@keyframes fin {
-    from { top : 70vmin; opacity: 1;}
-    to { top: 0vmin; opacity: 0;}
-}
-
-.body.is-scrolling .ixy-mort2{
-    animation-play-state: running;
-}
-
-
-/*------------------HTML2--------------------*/
-
-.html {
-    height: 5000px;
-    width: 100%;
-}
-
-
-
-
-.sprite.no3 {
-    left: 50vw;
-    transform: translateX(-50%);
-
-    width: 411.45px;
-    height: 422px;
-    background-size: cover;
-    background-image: url(../img/img_personnages/spritesheet-fantome-ciel.png);
-    background-repeat: repeat-x;
-    z-index: 1;
-    animation: sprite 2s steps(39) infinite;
+#morph {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
     position: absolute;
-    animation-play-state: paused;
+}
+
+.cls-1{
+    stroke: none !important;
+}
+
+.nuage {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    
+}
+
+.nuage.no1{
+    z-index: 2;
+    width: 100vw;
+}
+
+#fantome {
+    visibility:hidden;
+}
+/*-------------------CHAPITRE FIN------------------*/
+
+#fin {
+    z-index: 1;
+    background-color: var(--white);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    text-align: center;    
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.fin{
+    margin: 0px;
+    font-size: 40vw;
 }
