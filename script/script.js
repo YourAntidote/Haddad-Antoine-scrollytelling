@@ -4,49 +4,23 @@ gsap.registerPlugin(MotionPathPlugin);
 //gsap.registerPlugin(DrawSVGPlugin);
 
 
-gsap.from(".container", {
-  opacity: 0,
-  y: -50,
-  duration: 1,
-  ease: "power2.out",
+gsap.timeline({ 
   scrollTrigger: {
     trigger: ".container",
     start: "top 80%",
     end: "bottom 50%",
     toggleActions: "play none none reverse",
   }
-});
+})
+.from(".container", {opacity: 0, y: -50, duration: 1, ease: "power2.out"})
+.to(".scroll-down-arrow", {y: 10, opacity: 0, duration: 1, repeat: -1, yoyo: true, ease: "power1.inOut"})
+.to(".scroll-down-arrow span", { y: 10, duration: 1, repeat: -1, yoyo: true, ease: "power1.inOut"},'<')
+.to("h1", { y: -10, duration: 1, repeat: -1, yoyo: true, ease: "power1.inOut"},'<')
 
-gsap.to(".scroll-down-arrow", {
-    y: 10,
-    opacity: 0,
-    duration: 1,
-    repeat: -1,
-    yoyo: true,
-    ease: "power1.inOut"
-});
-  
-gsap.to(".scroll-down-arrow span", {
-    y: 10,
-    duration: 1,
-    repeat: -1,
-    yoyo: true,
-    ease: "power1.inOut"
-});
-  
-gsap.to("h1", {
-    y: -10,
-
-    duration: 1,
-    repeat: -1,
-    yoyo: true,
-    ease: "power1.inOut"
-});
 
 const body = document.querySelector('.body');
 
 let scrollTimer;
-
 
 window.addEventListener('scroll', function() {
 
@@ -63,55 +37,35 @@ window.addEventListener('scroll', function() {
 
 gsap.timeline({ 
   scrollTrigger: {
-    markers: true,
     scrub: true,
+    pin: true,
     start: 'top top',
     end:"500% top" ,
     trigger: '#chapitre1',
     toggleActions: "restart complete reverse reset"
   }})
-.to('#homme-falaise', {
-  y: '50vh',
-  duration: 1,
-})
-.from('#ixy-mort', {
-  y: '100vh',
-  duration: 1,
-  opacity: 0
-});
+.to('#homme-falaise', { y: '50vh', duration: 1,})
+.to('.petite-roche',  { y: '100vh', duration: 1,},'<')
+.from('#ixy-mort',    { y: '100vh', duration: 1, opacity: 0})
 
-gsap.timeline({ 
-  scrollTrigger: {
-  pin:true,
-  markers: true,
-  scrub: true,
-  start: 'top top',
-  end:"500% top" ,
-  trigger: '#chapitre1',
-  toggleActions: "restart complete reverse reset"
-}})
-.to('.petite-roche', {
-  y: '90vh',
-  duration: 1,
-});
 
 
 //Si l'élément est visible fait cela, sinon arrête-la
-var element = document.getElementById('roche');
-var options = {
+var element1 = document.getElementById('roche');
+var options1 = {
   root: null,
   rootMargin: '0px',
   threshold: 1.0 
 };
 
-var observer = new IntersectionObserver(function(entries) {
+var observer1 = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
     if (entry.isIntersecting) {
       anim.play();
     }
   });
-}, options);
-observer.observe(element);
+}, options1);
+observer1.observe(element1);
 
 
 let anim = gsap.timeline()
@@ -129,7 +83,6 @@ let anim = gsap.timeline()
 
 gsap.timeline({ scrollTrigger: {
   pin:true,
-  markers: true,
   scrub: true,
   start: 'top top',
   end:"400% top" ,
@@ -137,11 +90,29 @@ gsap.timeline({ scrollTrigger: {
   toggleActions: "restart complete reverse reset"
   }
 })
-.to('.feuille.no0', { y: '90vmin', duration: 1, rotation: 360})
-.from('.sprite-animation', {x: '-90vw',},'<')
+.to('.feuille.no0', { y: '90vmin', duration: 1, rotation: 360, ease: 'none'})
+.from('.sprite-animation', {x: '-90vw', ease: 'none'},'0.1')
 .to('.feuille.no0',{ opacity: 0})
 .to('.sprite-animation',{ opacity: 0,},'<')
-.to('#ixy-feuille',{  opacity: 1},'<')
+.to('#ixy-feuille',{  opacity: 1, ease: 'none'},'<')
+
+var element3 = document.getElementById('sprite1');
+var options3 = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 1.0 
+};
+
+var observer3 = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      element3.classList.add('active');
+      document.getElementById('sprite2').classList.add('active');
+      document.getElementById('sprite3').classList.add('active');
+    }
+  });
+}, options3);
+observer3.observe(element3);
 
 /* --------------------------------------Animation Chapitre 3 --------------------------------------------*/
 
@@ -149,7 +120,6 @@ let animation;
 
 gsap.timeline({ scrollTrigger: {
   pin:true,
-  markers: true,
   scrub: true,
   start: 'top top',
   end:"400% top" ,
@@ -176,18 +146,17 @@ gsap.timeline({ scrollTrigger: {
 
 gsap.timeline({ scrollTrigger: {
     pin:true,
-    markers: true,
     start: 'top top',
     end:"200% top" ,
     trigger: '#chapitre4',
     toggleActions: "restart complete reverse reset"
-  }})
+}})
+
 
 
 /* --------------------------------------Animation Chapitre 5 --------------------------------------------*/
 gsap.timeline({ scrollTrigger: {
   pin:false,
-  markers: true,
   scrub: false,
   start: 'top top',
   end:"400% top" ,
@@ -207,9 +176,26 @@ play.addEventListener("click", function () {
 
 /* --------------------------------------Animation Chapitre 6 --------------------------------------------*/
 
+var element6 = document.getElementById('sprite3');
+var options6 = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 1.0 
+};
+
+var observer6 = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      element6.classList.add('active');
+
+    }
+  });
+}, options6);
+observer6.observe(element6);
+
+
 gsap.timeline({ scrollTrigger: {
   pin:true,
-  markers: true,
   scrub: true,
   start: 'top top',
   end:"400% top" ,
@@ -221,27 +207,28 @@ gsap.timeline({ scrollTrigger: {
 
 //Si l'élément est visible démarre l'animation
 var element2 = document.getElementById('feuille');
-var options = {
+var options2 = {
   root: null,
   rootMargin: '0px',
   threshold: 1.0 
 };
 
-var observer = new IntersectionObserver(function(entries) {
+var observer2 = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
     if (entry.isIntersecting) {
       animFeuille.play();
       //animVent.play();
     }
   });
-}, options);
-observer.observe(element2);
+}, options2);
+observer2.observe(element2);
 /*
 let animVent = gsap.timeline()
   .paused(true)
     .from(".path", {ease: "none", drawSVG: "0% 0%", repeat: '-1', duration: 2
 })
 */
+
 
 let animFeuille = gsap.timeline()
   .paused(true)
@@ -256,7 +243,6 @@ let animFeuille = gsap.timeline()
 
 gsap.timeline({ scrollTrigger: {
   pin:true,
-  markers: true,
   scrub: 0.5,
   start: 'top top',
   end:"400% top" ,

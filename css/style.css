@@ -9,6 +9,17 @@
     --orange: #D45125;
 }
 
+@font-face {
+    font-family: Shantell;
+    src: url(../coverage/font/ShantellSans-Bold.ttf);
+
+}
+@font-face {
+    font-family: Sriracha;
+    src: url(../coverage/font/Sriracha-Regular.ttf);
+
+}
+
 ul.technique-gsap{
     background: rgba(0,0,0,0.3);
     color: white;
@@ -66,12 +77,9 @@ header {
 }
   
 h1 {
-    font-family: 'Shantell Sans', cursive;
-    font-weight: bold;
+    font-family: 'Shantell', cursive;
     font-size:calc(10px + 10vw);
     color: var(--turquoise);
-
-
 }
 
 p {
@@ -235,7 +243,7 @@ a{
     width: 503.5px;
     height: 502px;
     background-size: cover;
-    background-image: url("../img/img_personnages/spritesheet-fantome-foret2.png");
+    background-image: url("../img/img_personnages/spritesheet-fantome-foret2.webp");
     background-repeat: repeat-x;
     z-index: 1;
     animation: sprite-animation 2s steps(32) infinite;
@@ -247,14 +255,9 @@ a{
     to { background-position: 16112px 0;}
 }
 
-.body.is-scrolling .sprite-animation{
+.body.is-scrolling .sprite-animation.active{
     animation-play-state: running;
 }
-
-.body.is-scrolling .feuille{
-    animation-play-state: running;
-}
-
 /*-------------------CHAPITRE 3------------------*/
 #chapitre3{
     width: 100vw;
@@ -299,7 +302,7 @@ a{
     z-index: 11;
 
 }
-.body.is-scrolling .sprite{
+.body.is-scrolling .sprite.active{
     animation-play-state: running;
 }
 

@@ -5,12 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
     <link rel="icon" href="./img/img_personnages/ixy.svg">
     <title>La quête de Ixy</title>
 </head>
@@ -54,8 +48,8 @@
 
         <section id="chapitre2" class="chapter">
             <p>Alors qu'Ixy rebroussait chemin, il vit une feuille une par terre avec un étrange motif dessus.</p>
-            <div class="ixy-marche no1">
-                <div class="sprite-animation animable"></div>
+            <div class="ixy-marche no1" >
+                <div class="sprite-animation animable" id="sprite1"></div>
             </div>
             <img src="./img/img_personnages/ixy_voit_feuille.svg" id="ixy-feuille" class=" chapt2">
             <img src="./img/img_elements_visuels/feuille_vole.svg" class="feuille no0 chapt2 animable">
@@ -96,9 +90,9 @@
         <!-------------------CHAPITRE 4------------------>
 
         <section id="chapitre4" class="chapter">   
-            <p>Au bout du long chemin, Ixy est arrivé proche d'un vieux château abandonné.</p>
+            <p id="stopper">Au bout du long chemin, Ixy est arrivé proche d'un vieux château abandonné.</p>
             <div>
-                <div class="sprite no1 animable"></div>
+                <div class="sprite no1 animable" id="sprite2"></div>
             </div>
             <ul class="technique-gsap"> 
                 <li>anim du fantome qui s'éloigne</li> 
@@ -136,7 +130,7 @@
         <section id="chapitre6" class="chapter">
             <p>Ixy quitta le château très gai de sa découverte</p>
             <div>
-                <div class="sprite no2 animable" ></div>
+                <div class="sprite no2 animable" id="sprite3" ></div>
             </div>
             <img src="./img/img_elements_visuels/feuille_vole.svg" class="feuille no1 chapt6 animable" id="feuille">
             <img src="./img/img_elements_visuels/feuille_vole.svg" class="feuille no2 chapt6 animable" id="feuille">
