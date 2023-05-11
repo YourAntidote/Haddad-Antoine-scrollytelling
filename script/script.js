@@ -91,15 +91,32 @@ gsap.timeline({
   toggleActions: "restart complete reverse reset"
 }})
 .to('.petite-roche', {
-  y: '100vh',
+  y: '90vh',
   duration: 1,
 });
 
 
+//Si l'élément est visible fait cela, sinon arrête-la
+var element = document.getElementById('roche');
+var options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 1.0 
+};
+
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      anim.play();
+    }
+  });
+}, options);
+observer.observe(element);
+
 
 let anim = gsap.timeline()
-  .paused(false)
-    .to('.petite-roche.no1', { duration: 25, rotation: 400, repeat: '-1', ease: 'none'}, '<')
+  .paused(true)
+    .to('.petite-roche.no1', { duration: 25, rotation: 360, repeat: '-1', ease: 'none'}, '<')
     .to('.petite-roche.no2', { duration: 30, rotation: 360, repeat: '-1', ease: 'none'}, '<')
     .to('.petite-roche.no3', { duration: 20, rotation: 360, repeat: '-1', ease: 'none'}, '<')
     .to('.petite-roche.no4', { duration: 15, rotation: 360, repeat: '-1', ease: 'none'}, '<')
@@ -120,11 +137,7 @@ gsap.timeline({ scrollTrigger: {
   toggleActions: "restart complete reverse reset"
   }
 })
-.to('.feuille.no0', {
-y: '90vmin',
-duration: 1,
-rotation: 360
-})
+.to('.feuille.no0', { y: '90vmin', duration: 1, rotation: 360})
 .from('.sprite-animation', {x: '-90vw',},'<')
 .to('.feuille.no0',{ opacity: 0})
 .to('.sprite-animation',{ opacity: 0,},'<')
@@ -164,7 +177,6 @@ gsap.timeline({ scrollTrigger: {
 gsap.timeline({ scrollTrigger: {
     pin:true,
     markers: true,
-    scrub: true,
     start: 'top top',
     end:"200% top" ,
     trigger: '#chapitre4',
@@ -174,15 +186,16 @@ gsap.timeline({ scrollTrigger: {
 
 /* --------------------------------------Animation Chapitre 5 --------------------------------------------*/
 gsap.timeline({ scrollTrigger: {
-  pin:true,
+  pin:false,
   markers: true,
-  scrub: true,
+  scrub: false,
   start: 'top top',
   end:"400% top" ,
   trigger: '#chapitre5',
   toggleActions: "restart complete reverse reset"
   }
 })
+.to('#bgc2', { opacity: 0}, '=-')
 
 const mp3 = document.getElementById('coffre');
 
@@ -190,7 +203,6 @@ let play = document.querySelector("#chapitre5");
 play.addEventListener("click", function () {
   mp3.play();
 });
-
 
 
 /* --------------------------------------Animation Chapitre 6 --------------------------------------------*/
@@ -204,12 +216,35 @@ gsap.timeline({ scrollTrigger: {
   trigger: '#chapitre6',
   toggleActions: "restart complete reverse reset"
   }
-})  
-.from(".path", {ease: "none", drawSVG: "0% 0%"})
+})
+
+
+//Si l'élément est visible démarre l'animation
+var element2 = document.getElementById('feuille');
+var options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 1.0 
+};
+
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      animFeuille.play();
+      animVent.play();
+    }
+  });
+}, options);
+observer.observe(element2);
+
+let animVent = gsap.timeline()
+  .paused(true)
+    .from(".path", {ease: "none", drawSVG: "0% 0%", repeat: '-1', duration: 2
+})
 
 
 let animFeuille = gsap.timeline()
-  .paused(false)
+  .paused(true)
     .to('.feuille.no1', { duration: 25, y: '52vmin', rotation: 400, repeat: '-1', ease: 'none'}, '<')
     .to('.feuille.no2', { duration: 30, y: '70vmin', rotation: 360, repeat: '-1', ease: 'none'}, '<')
     .to('.feuille.no3', { duration: 20, y: '65vmin', rotation: 360, repeat: '-1', ease: 'none'}, '<')
@@ -222,59 +257,14 @@ let animFeuille = gsap.timeline()
 gsap.timeline({ scrollTrigger: {
   pin:true,
   markers: true,
-  scrub: true,
+  scrub: 0.5,
   start: 'top top',
   end:"400% top" ,
   trigger: '#chapitre7',
   toggleActions: "restart complete reverse reset"
   }
 })
-gsap.to("#chapitre7", {
-  backgroundPosition: "0% 90%",
-  ease: "none",
-  scrollTrigger: {
-      trigger: "#chapitre7",
-      start: 'top top',
-      end:"400% top" ,
-      scrub: true,
-      markers: true,
-      toggleActions: "restart complete reverse reset"
-  }
-})
-gsap.to('.nuage.no1', {
-  bottom: '-100vh',
-  ease: "none",
-  scrollTrigger: {
-      trigger: "#chapitre7",
-      start: 'top top',
-      end:"400% top" ,
-      scrub: true,
-      markers: true,
-      toggleActions: "restart complete reverse reset"
-  }
-})
-gsap.to('.nuage.no2', {
-  bottom: '-50vh',
-  ease: "none",
-  scrollTrigger: {
-      trigger: "#chapitre7",
-      start: 'top top',
-      end:"400% top" ,
-      scrub: true,
-      markers: true,
-      toggleActions: "restart complete reverse reset"
-  }
-})
-
-
-gsap.timeline({
-  scrollTrigger: {
-    start: 'top top',
-    end:"400% top" ,
-    scrub: 0.5,
-    trigger: "#chapitre7",
-    toggleActions: "restart complete reverse reset"
-  },
-})
-
-.from("#nuage", {morphSVG: "#fantome"});
+.to("#chapitre7", { backgroundPosition: "0% 90%", ease: "none"})
+.to(".nuage.no1", { bottom: '-50vh', ease: "none"}, '<')
+.to('.nuage.no2', { bottom: '-30vh', ease: "none"}, '<')
+.from("#nuage", {morphSVG: "#fantome"}, '<');
