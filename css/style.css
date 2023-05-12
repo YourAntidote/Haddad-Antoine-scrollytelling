@@ -291,7 +291,7 @@ a{
     background-image: url("../img/img_arriere_plan/paysage_chateau.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom center;
+    background-position: center center;
 }
 
 .chapt4 {
