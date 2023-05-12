@@ -172,7 +172,6 @@ gsap.timeline({ scrollTrigger: {
 
 gsap.timeline({ scrollTrigger: {
     pin:true,
-    markers: true,
     start: 'top top',
     end:"200% top" ,
     trigger: '#chapitre4',
