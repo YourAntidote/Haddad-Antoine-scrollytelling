@@ -205,7 +205,7 @@ gsap.timeline({ scrollTrigger: {
   pin:true,
   scrub: true,
   start: 'top top',
-  end:"400% top" ,
+  end:"200% top" ,
   trigger: '#chapitre6',
   toggleActions: "restart complete reverse reset"
   }
