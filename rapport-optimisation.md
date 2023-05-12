@@ -30,4 +30,4 @@ Je suis parvenu à changer un spritsheet avec son image correspondant WEBP, mais
 
 ## Rapport projet ScrollyTelling après optimisation
 
-[Nouvelle page Speed Insights - Rapport du 11 mai 2023, 18:40:57] (https://pagespeed.web.dev/analysis/https-yourantidote-github-io-Haddad-Antoine-scrollytelling/5ux1x1vitj?form_factor=desktop) à 97% de performances
+[Nouvelle page Speed Insights - Rapport du 11 mai 2023, 18:40:57](https://pagespeed.web.dev/analysis/https-yourantidote-github-io-Haddad-Antoine-scrollytelling/5ux1x1vitj?form_factor=desktop) à 97% de performances
