@@ -63,7 +63,6 @@ window.addEventListener('scroll', function() {
 
 gsap.timeline({ 
   scrollTrigger: {
-    markers: true,
     scrub: true,
     start: 'top top',
     end:"500% top" ,
@@ -83,7 +82,6 @@ gsap.timeline({
 gsap.timeline({ 
   scrollTrigger: {
   pin:true,
-  markers: true,
   scrub: true,
   start: 'top top',
   end:"500% top" ,
@@ -129,7 +127,6 @@ let anim = gsap.timeline()
 
 gsap.timeline({ scrollTrigger: {
   pin:true,
-  markers: true,
   scrub: true,
   start: 'top top',
   end:"400% top" ,
@@ -149,7 +146,6 @@ let animation;
 
 gsap.timeline({ scrollTrigger: {
   pin:true,
-  markers: true,
   scrub: true,
   start: 'top top',
   end:"400% top" ,
@@ -187,7 +183,6 @@ gsap.timeline({ scrollTrigger: {
 /* --------------------------------------Animation Chapitre 5 --------------------------------------------*/
 gsap.timeline({ scrollTrigger: {
   pin:false,
-  markers: true,
   scrub: false,
   start: 'top top',
   end:"400% top" ,
@@ -209,7 +204,6 @@ play.addEventListener("click", function () {
 
 gsap.timeline({ scrollTrigger: {
   pin:true,
-  markers: true,
   scrub: true,
   start: 'top top',
   end:"400% top" ,
@@ -256,7 +250,6 @@ let animFeuille = gsap.timeline()
 
 gsap.timeline({ scrollTrigger: {
   pin:true,
-  markers: true,
   scrub: 0.5,
   start: 'top top',
   end:"400% top" ,
