@@ -1,6 +1,6 @@
 # Rapport d'optimisation du projet ScrollyTelling
 
-[Page Speed Insights - Rapport du 11 mai 2023, 17:06:51](https://pagespeed.web.dev/analysis/https-yourantidote-github-io-Haddad-Antoine-scrollytelling/l56zlqbd7j?form_factor=desktop) à 96% de performnces
+[Page Speed Insights - Rapport du 11 mai 2023, 17:06:51](https://pagespeed.web.dev/analysis/https-yourantidote-github-io-Haddad-Antoine-scrollytelling/l56zlqbd7j?form_factor=desktop) à 96% de performances
 
 ## Problème #1
 ### Différez le chargement des images hors écran
